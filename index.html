@@ -1,1 +1,94 @@
-<h1>Daily Expense Tracker</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense Tracker</title><link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body><header>
+    <div>
+        <h1>Daily Expense Tracker</h1>
+        <p class="subtitle">Track your spending with ease</p>
+    </div>
+
+    <button id="themeToggle" class="theme-btn">
+        🌙
+    </button>
+</header>
+
+<section class="balance-card">
+    <h2>Total Balance</h2>
+    <p id="totalBalance">Rp 0</p>
+</section>
+
+<section class="form-section">
+
+    <h2>Add Transaction</h2>
+
+    <form id="expenseForm">
+
+        <input
+            type="text"
+            id="itemName"
+            placeholder="Item Name"
+            required
+        >
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Amount"
+            required
+        >
+
+        <select id="category" required>
+            <option value="">Choose Category</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Fun">Fun</option>
+        </select>
+
+        <input
+            type="number"
+            id="limit"
+            placeholder="Spending Limit"
+            required
+        >
+
+        <button type="submit">
+            Add Transaction
+        </button>
+
+    </form>
+
+</section>
+
+<section class="transaction-section">
+
+    <div class="transaction-header">
+        <h2>Transactions</h2>
+
+        <select id="sortCategory">
+            <option value="all">All Categories</option>
+            <option value="Food">Food</option>
+            <option value="Transport">Transport</option>
+            <option value="Fun">Fun</option>
+        </select>
+    </div>
+
+    <div id="transactionList"></div>
+
+</section>
+
+<section class="chart-section">
+    <h2>Expense Distribution</h2>
+    <canvas id="expenseChart"></canvas>
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+  </html>
